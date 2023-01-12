@@ -11,6 +11,17 @@ def print_hi(name):
 
 # 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    import numpy as np
+    import scipy.stats as stats
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from matplotlib import rc
 
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    plt.rc('font', family='SimHei', size=13)
+    plt.rcParams['axes.unicode_minus'] = False
+    B_Dist = stats.binom(10, 0.5)  # 定义分布
+    x = range(11)  # 取值范围，从0到10
+    plt.bar(x, B_Dist.pmf(x))  # 绘图，B_Dist.pmf(x) 生成x在该分布下对应的值
+    plt.title('二项分布概率质量函数')
+    plt.show()
+        # 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
